@@ -178,6 +178,13 @@ def process_login():
         flash("User/password not found. Try again.")
         return redirect("/login")
 
+@app.route("/logout")
+def process_logout():
+    """Log user out"""
+
+    del session['email']
+    flash('You have successfully logged out.')
+    return redirect("/melons")
 
 @app.route("/checkout")
 def checkout():
